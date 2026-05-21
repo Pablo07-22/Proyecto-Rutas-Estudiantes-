@@ -1,0 +1,129 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f4f6;
+    padding: 20px;
+    color:#1f2937;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:#1e3a8a;
+    font-size:40px;
+}
+
+h2{
+    margin-bottom:15px;
+    color:#2563eb;
+}
+
+section{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+form{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+input{
+    flex:1;
+    min-width:200px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #d1d5db;
+    outline:none;
+}
+
+input:focus{
+    border:1px solid #2563eb;
+}
+
+button{
+    border:none;
+    padding:12px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    background:#2574eb;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#Rutas,#estudiantesRegistrados{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.ruta-card p,
+.estudiante-card p{
+    margin-bottom:8px;
+}
+
+ul{
+    margin-top:10px;
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:5px;
+}
+
+.acciones{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+    flex-wrap:wrap;
+}
+
+#btnEliminar,#btnEliminarRuta{
+    background:#dc2626;
+}
+
+#btnEliminar:hover,#btnEliminarRuta:hover{
+    background:#b91c1c;
+}
+
+#btnEditarRuta,#btnEditarEstudiante{
+    background:#16a34a;
+}
+
+
+@media(max-width:1024px){
+
+    body{
+        padding:15px;
+    }
+}
+
+@media(max-width:768px){
+
+    form{
+        flex-direction:column;
+    }
+
+    button{
+        width:100%;
+    }
+}
+
+@media(max-width:480px){
+
+    h1{
+        font-size:30px;
+    }
+
+    section{
+        padding:15px;
+    }
+}

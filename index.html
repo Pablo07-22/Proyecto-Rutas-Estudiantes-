@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas Seguras Pablo</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <h1>Bienvenido Rutas Seguras Pablo </h1>
+    
+ <section>
+    <h2>Crear una nueva ruta</h2>
+    <form id="formulario">
+        <input type="text" id="ruta" placeholder="Ingresa el nombre de la ruta">
+        <input type="text" id="conductor" placeholder="Ingresa el nombre del conductor">
+        <input type="time" id="hora">
+        <input type="text" id="ciudad" placeholder="Ingresa la ciudad Ej: Floridablanca">
+        <button type="submit" id="botonRuta"> Agregar Ruta</button>
+    </form>
+
+ </section>
+ 
+ <section >
+    <h2>Agregar un nuevo Estudiante</h2>
+    <form id="formularioEstudiante">
+        <input type="text" id="estudiante" placeholder="Ingresa el nombre del estudiante">
+        <input type="email" id="email" placeholder="Email Con:@">
+        <button type="submit" id="btnEstudiante"> Agregar Estudiante</button>
+    </form>
+ </section>
+
+ <section>
+    <h2>Rutas Registradas</h2>
+    <div id="Rutas"></div>
+ </section>
+
+ <section>
+    <h2>Estudiantes Registrados</h2>
+    <div id="estudiantesRegistrados"></div>
+ </section>
+</body>
+<script src="App.js"></script>
+</html>
