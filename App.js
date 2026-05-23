@@ -126,6 +126,7 @@ function renderRutas(){
             <br>
             <p><strong>Clima:</strong>${via.estado}</p>
             <br>
+            <br>
             <button id="btnEditarRuta">Editar Ruta</button>
             <button id="btnEliminarRuta">Eliminar Ruta</button>
         </div>
