@@ -125,8 +125,7 @@ button:hover{
    GRID CARDS
 ========================= */
 
-#Rutas,
-#estudiantesRegistrados{
+#Rutas{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:24px;
@@ -137,9 +136,8 @@ button:hover{
    TARJETAS
 ========================= */
 
-.ruta-card,
-.estudiante-card{
-    background:#1e293b;
+#ruta-card{
+    background: #111827;
     border-radius:24px;
     padding:25px;
     position:relative;
@@ -150,27 +148,22 @@ button:hover{
     0 12px 25px rgba(0,0,0,.3);
 }
 
-.ruta-card::before,.estudiante-card::before{
+#ruta-card::before{
     content:"";
     position:absolute;
     width:180px;
     height:180px;
-    background:linear-gradient(
-    135deg,
-    rgba(59,130,246,.18),
-    rgba(236,72,153,.18)
-    );
     border-radius:50%;
     top:-80px;
     right:-80px;
 }
 
-.ruta-card:hover,.estudiante-card:hover{
+#ruta-card:hover:hover{
     transform:translateY(-8px);
     border:1px solid rgba(59,130,246,.4);
 }
 
-.ruta-card p, .estudiante-card p{
+#ruta-card p{
     margin-bottom:12px;
     line-height:1.7;
     position:relative;
@@ -237,32 +230,110 @@ li{
    RESPONSIVE
 ========================= */
 
-@media(max-width:900px){
+@media(max-width:1024px){
 
     body{
-        padding:20px;
+        padding:25px;
     }
 
     h1{
-        font-size:38px;
+        font-size:40px;
+    }
+
+    section{
+        padding:25px;
     }
 }
 
-@media(max-width:600px){
+@media(max-width:768px){
+
+    body{
+        padding:18px;
+    }
+
+    h1{
+        font-size:32px;
+        line-height:1.2;
+    }
+
+    h2{
+        font-size:20px;
+        height:auto;
+    }
 
     form{
         grid-template-columns:1fr;
+    }
+
+    #Rutas,
+    #estudiantesRegistrados{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:20px;
+        border-radius:20px;
     }
 
     button{
         width:100%;
     }
 
+    .acciones{
+        flex-direction:column;
+    }
+}
+
+select{
+    background:#1e293b;
+    border:none;
+    padding:16px;
+    border-radius:16px;
+    color:#f8fafc;
+    font-size:15px;
+    border:1px solid transparent;
+}
+
+select:focus{
+    outline:none;
+    border:1px solid #3b82f6;
+    box-shadow:0 0 0 4px rgba(59,130,246,.15);
+}
+
+@media(max-width:480px){
+
+    body{
+        padding:12px;
+    }
+
     h1{
-        font-size:30px;
+        font-size:26px;
+    }
+
+    h1::after{
+        width:80px;
     }
 
     section{
-        padding:20px;
+        padding:15px;
+    }
+
+    input,
+    button,
+    select{
+        padding:14px;
+        font-size:14px;
+    }
+
+    .ruta-card,
+    .estudiante-card,
+    #card{
+        padding:18px;
+    }
+
+    #Rutas,
+    #estudiantesRegistrados{
+        grid-template-columns:1fr;
+        gap:15px;
     }
 }

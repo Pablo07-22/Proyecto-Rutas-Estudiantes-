@@ -20,20 +20,7 @@ const estudiantesRegistrados = document.getElementById('estudiantesRegistrados')
 const rutaEstudiante = document.getElementById('rutaEstudiante')
 
 
-function guardarDatos() {
-
-    localStorage.setItem(
-        'rutas',
-        JSON.stringify(rutaRegistrada)
-    )
-
-    localStorage.setItem(
-        'estudiantes',
-        JSON.stringify(estudiantes)
-    )
-}
 // Consumo de api 
-
 async function obtenerClima(ciudadNombre){
     // contraseña de la api
     const Api = "8eddffe91dac3c79bdbd59f1a7c5ebcb"
@@ -50,6 +37,18 @@ async function obtenerClima(ciudadNombre){
     }
 }
 
+function guardarDatos() {
+
+    localStorage.setItem(
+        'rutas',
+        JSON.stringify(rutaRegistrada)
+    )
+
+    localStorage.setItem(
+        'estudiantes',
+        JSON.stringify(estudiantes)
+    )
+}
 // crear la ruta y agrega la rita 
 botonRuta.addEventListener('click', async (e)=>{
     e.preventDefault()
@@ -114,7 +113,7 @@ function renderRutas(){
     rutaRegistrada.forEach((via)=>{
       const article = document.createElement('article')
         article.innerHTML = `
-        <div class="card">
+        <div id="ruta-card">
             <h2>${via.ruta}</h2>
             <p><strong>Conductor:</strong>${via.conductor}</p><p>
             <br>
@@ -132,8 +131,7 @@ function renderRutas(){
         </div>
         `
         // furncion para editar ruta
-        const btnEditar =
-        article.querySelector('#btnEditarRuta')
+        const btnEditar = article.querySelector('#btnEditarRuta')
         btnEditar.addEventListener('click',()=>{
             ruta.value = via.ruta
             conductor.value = via.conductor
@@ -143,9 +141,7 @@ function renderRutas(){
             botonRuta.textContent ='Guardar Cambios'
         })
         // funcion para eliminar ruta
-        const btnEliminarRuta =
-        article.querySelector('#btnEliminarRuta')
-        
+        const btnEliminarRuta = article.querySelector('#btnEliminarRuta')
         btnEliminarRuta.addEventListener('click',()=>{
             rutaRegistrada = rutaRegistrada.filter(ruta => ruta.id !== via.id)
             // elimina estudiantes de la ruta eliminada
@@ -159,7 +155,6 @@ function renderRutas(){
 }
 
 // crear el estudiante y agregar el estudiante a la ruta seleccionada
-
 btnEstudiante.addEventListener('click', (e)=>{
     e.preventDefault()
     // validacion de campos vacios y correo valido
@@ -167,8 +162,8 @@ btnEstudiante.addEventListener('click', (e)=>{
         alert('Complete todos los espacios en blanco')
         return
     }
-    if(!email.value.includes('@')){
-        alert('Ingresa correo valido con @')
+    if(!email.value.includes('@gmail.com')){
+        alert('Ingresa correo valido con @gmail.com')
         return
     }
     // editar estudiante
@@ -195,14 +190,12 @@ btnEstudiante.addEventListener('click', (e)=>{
     }
     
     estudiantes.push(lista)
-
     guardarDatos()
     renderEstudiantes()
     formularioEstudiante.reset()
 })
 //  funcion para mostrar estudiantes 
 const templateEstudiante = document.createElement('template')
-
 templateEstudiante.innerHTML = `
     <style>
         #card{
@@ -224,7 +217,7 @@ templateEstudiante.innerHTML = `
         p{
             margin: 5px 0;
         }
-        .botones{
+        #botones{
             display: flex;
             gap: 10px;
             margin-top: 15px;
@@ -250,7 +243,7 @@ templateEstudiante.innerHTML = `
         <h3 id="nombre"></h3>
         <p id="correo"></p>
         <p id="ruta"></p>
-        <div class="botones">
+        <div id="botones">
             <button id="editar">Editar</button>
             <button id="eliminar">Eliminar</button>
         </div>
@@ -294,7 +287,7 @@ function renderEstudiantes(){
             email.value = est.email
             rutaEstudiante.value = est.ruta
             idEstudianteEditando = est.id
-            btnEstudiante.textContent = 'Guardar Cambios'
+            btnEstudiante.textContent = 'Guardar Cambio'
         })
 
         // boton eliminar estudiante
@@ -315,7 +308,6 @@ function eliminarEstudiante(id){
     renderEstudiantes()
     renderRutas()
 }
-
 
 renderRutas()
 renderEstudiantes()

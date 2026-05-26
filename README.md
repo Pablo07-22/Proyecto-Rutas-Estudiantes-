@@ -153,8 +153,8 @@ El proyecto cuenta con diseño responsive usando:
 Proyecto/
 │
 ├── index.html
-├── style.css
-├── app.js
+├── Style.css
+├── App.js
 ├── README.md
 │
 └── img/
